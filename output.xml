@@ -1,0 +1,1958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221220 18:04:17.636" rpa="true" schemaversion="3">
+<suite id="s1" name="Producer" source="c:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\producer.robot">
+<test id="s1-t1" name="main" line="19">
+<kw name="Creating List">
+<kw name="Create List" library="BuiltIn">
+<var>${list}</var>
+<arg>${fol1}</arg>
+<arg>${fol2}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221220 18:04:23.153" level="INFO">${list} = ['C:/Users/kamma.naveen/Desktop/Samples', 'C:/Users/kamma.naveen/Desktop/IMP/payslips']</msg>
+<status status="PASS" starttime="20221220 18:04:23.152" endtime="20221220 18:04:23.167"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.170" level="INFO">${counter} = 0</msg>
+<status status="PASS" starttime="20221220 18:04:23.169" endtime="20221220 18:04:23.170"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${items}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221220 18:04:23.172" level="INFO">${items} = []</msg>
+<status status="PASS" starttime="20221220 18:04:23.171" endtime="20221220 18:04:23.172"/>
+</kw>
+<for flavor="IN">
+<var>${i}</var>
+<value>@{list}</value>
+<iter>
+<var name="${i}">C:/Users/kamma.naveen/Desktop/Samples</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221220 18:04:23.180" level="INFO">${counter} = 1</msg>
+<status status="PASS" starttime="20221220 18:04:23.178" endtime="20221220 18:04:23.180"/>
+</kw>
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>${paths}</var>
+<arg>${i}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20221220 18:04:23.183" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\kamma.naveen\Desktop\Samples"&gt;C:\Users\kamma.naveen\Desktop\Samples&lt;/a&gt;'.</msg>
+<msg timestamp="20221220 18:04:23.192" level="INFO">36 files:
+ACCOUNTEMPS 55610891.pdf
+ACCOUNTEMPS 55645439.pdf
+ACOUNTEMPS 55678120.pdf
+ADP 565526311.pdf
+ADP 569344916.pdf
+ADP 569345235.pdf
+A_R Invoice - 98249.pdf
+A_R Invoice - 98572.pdf
+A_R Invoice - 99066.pdf
+A_R Invoice - 99411.pdf
+A_R Invoice - 99412.pdf
+A_R Invoice - 99413.pdf
+C &amp; C 17433.pdf
+C &amp; C 17434.pdf
+C &amp; C 17499.pdf
+C &amp; C 17706.pdf
+C &amp; C 17973.pdf
+C &amp; C 17990.pdf
+C&amp;C 17999.pdf
+Inv25806384.pdf
+Inv25806388.pdf
+Inv25806394.pdf
+Inv25806395.pdf
+Inv25806398.pdf
+Inv25806400.pdf
+Inv25808453.pdf
+so00_9107921672_invoice_20201211_020910.pdf
+so00_9107921673_invoice_20201211_020910.pdf
+so00_9107951657_invoice_20201212_020815.pdf
+so00_9108050802_invoice_20201216_020854.pdf
+so00_9108050803_invoice_20201216_020854.pdf
+so00_9108087613_invoice_20201217_020741.pdf
+so00_9108087614_invoice_20201217_020741.pdf
+so00_9108108201_invoice_20201217_020958.pdf
+so00_9108134520_invoice_20201218_020727.pdf
+so00_9108154227_invoice_20201218_020921.pdf</msg>
+<msg timestamp="20221220 18:04:23.194" level="INFO">${paths} = ['ACCOUNTEMPS 55610891.pdf', 'ACCOUNTEMPS 55645439.pdf', 'ACOUNTEMPS 55678120.pdf', 'ADP 565526311.pdf', 'ADP 569344916.pdf', 'ADP 569345235.pdf', 'A_R Invoice - 98249.pdf', 'A_R Invoice - 98572.pdf',...</msg>
+<status status="PASS" starttime="20221220 18:04:23.181" endtime="20221220 18:04:23.195"/>
+</kw>
+<for flavor="IN">
+<var>${file}</var>
+<value>@{paths}</value>
+<iter>
+<var name="${file}">ACCOUNTEMPS 55610891.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.198" endtime="20221220 18:04:23.199"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.197" endtime="20221220 18:04:23.199"/>
+</iter>
+<iter>
+<var name="${file}">ACCOUNTEMPS 55645439.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.200" endtime="20221220 18:04:23.202"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.200" endtime="20221220 18:04:23.202"/>
+</iter>
+<iter>
+<var name="${file}">ACOUNTEMPS 55678120.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.203" endtime="20221220 18:04:23.204"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.202" endtime="20221220 18:04:23.204"/>
+</iter>
+<iter>
+<var name="${file}">ADP 565526311.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.205" endtime="20221220 18:04:23.205"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.204" endtime="20221220 18:04:23.206"/>
+</iter>
+<iter>
+<var name="${file}">ADP 569344916.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.206" endtime="20221220 18:04:23.207"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.206" endtime="20221220 18:04:23.207"/>
+</iter>
+<iter>
+<var name="${file}">ADP 569345235.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.208" endtime="20221220 18:04:23.209"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.207" endtime="20221220 18:04:23.210"/>
+</iter>
+<iter>
+<var name="${file}">A_R Invoice - 98249.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.211" endtime="20221220 18:04:23.212"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.210" endtime="20221220 18:04:23.213"/>
+</iter>
+<iter>
+<var name="${file}">A_R Invoice - 98572.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.213" endtime="20221220 18:04:23.214"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.213" endtime="20221220 18:04:23.214"/>
+</iter>
+<iter>
+<var name="${file}">A_R Invoice - 99066.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.215" endtime="20221220 18:04:23.216"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.215" endtime="20221220 18:04:23.216"/>
+</iter>
+<iter>
+<var name="${file}">A_R Invoice - 99411.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.217" endtime="20221220 18:04:23.217"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.216" endtime="20221220 18:04:23.217"/>
+</iter>
+<iter>
+<var name="${file}">A_R Invoice - 99412.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.218" endtime="20221220 18:04:23.218"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.217" endtime="20221220 18:04:23.218"/>
+</iter>
+<iter>
+<var name="${file}">A_R Invoice - 99413.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.219" endtime="20221220 18:04:23.219"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.219" endtime="20221220 18:04:23.219"/>
+</iter>
+<iter>
+<var name="${file}">C &amp; C 17433.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.220" endtime="20221220 18:04:23.220"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.220" endtime="20221220 18:04:23.220"/>
+</iter>
+<iter>
+<var name="${file}">C &amp; C 17434.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.221" endtime="20221220 18:04:23.221"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.221" endtime="20221220 18:04:23.221"/>
+</iter>
+<iter>
+<var name="${file}">C &amp; C 17499.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.222" endtime="20221220 18:04:23.222"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.222" endtime="20221220 18:04:23.222"/>
+</iter>
+<iter>
+<var name="${file}">C &amp; C 17706.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.224" endtime="20221220 18:04:23.225"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.222" endtime="20221220 18:04:23.225"/>
+</iter>
+<iter>
+<var name="${file}">C &amp; C 17973.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.226" endtime="20221220 18:04:23.226"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.225" endtime="20221220 18:04:23.227"/>
+</iter>
+<iter>
+<var name="${file}">C &amp; C 17990.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.228" endtime="20221220 18:04:23.228"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.227" endtime="20221220 18:04:23.228"/>
+</iter>
+<iter>
+<var name="${file}">C&amp;C 17999.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.229" endtime="20221220 18:04:23.230"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.229" endtime="20221220 18:04:23.230"/>
+</iter>
+<iter>
+<var name="${file}">Inv25806384.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.230" endtime="20221220 18:04:23.231"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.230" endtime="20221220 18:04:23.231"/>
+</iter>
+<iter>
+<var name="${file}">Inv25806388.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.231" endtime="20221220 18:04:23.232"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.231" endtime="20221220 18:04:23.232"/>
+</iter>
+<iter>
+<var name="${file}">Inv25806394.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.233" endtime="20221220 18:04:23.233"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.232" endtime="20221220 18:04:23.233"/>
+</iter>
+<iter>
+<var name="${file}">Inv25806395.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.234" endtime="20221220 18:04:23.234"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.233" endtime="20221220 18:04:23.234"/>
+</iter>
+<iter>
+<var name="${file}">Inv25806398.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.235" endtime="20221220 18:04:23.235"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.234" endtime="20221220 18:04:23.235"/>
+</iter>
+<iter>
+<var name="${file}">Inv25806400.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.236" endtime="20221220 18:04:23.236"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.235" endtime="20221220 18:04:23.236"/>
+</iter>
+<iter>
+<var name="${file}">Inv25808453.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.236" endtime="20221220 18:04:23.237"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.236" endtime="20221220 18:04:23.237"/>
+</iter>
+<iter>
+<var name="${file}">so00_9107921672_invoice_20201211_020910.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.237" endtime="20221220 18:04:23.239"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.237" endtime="20221220 18:04:23.239"/>
+</iter>
+<iter>
+<var name="${file}">so00_9107921673_invoice_20201211_020910.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.240" endtime="20221220 18:04:23.240"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.239" endtime="20221220 18:04:23.241"/>
+</iter>
+<iter>
+<var name="${file}">so00_9107951657_invoice_20201212_020815.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.241" endtime="20221220 18:04:23.242"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.241" endtime="20221220 18:04:23.242"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108050802_invoice_20201216_020854.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.243" endtime="20221220 18:04:23.244"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.242" endtime="20221220 18:04:23.244"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108050803_invoice_20201216_020854.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.245" endtime="20221220 18:04:23.246"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.245" endtime="20221220 18:04:23.246"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108087613_invoice_20201217_020741.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.246" endtime="20221220 18:04:23.247"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.246" endtime="20221220 18:04:23.248"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108087614_invoice_20201217_020741.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.249" endtime="20221220 18:04:23.249"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.248" endtime="20221220 18:04:23.249"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108108201_invoice_20201217_020958.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.250" endtime="20221220 18:04:23.251"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.250" endtime="20221220 18:04:23.251"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108134520_invoice_20201218_020727.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.252" endtime="20221220 18:04:23.252"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.251" endtime="20221220 18:04:23.254"/>
+</iter>
+<iter>
+<var name="${file}">so00_9108154227_invoice_20201218_020921.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.254" endtime="20221220 18:04:23.257"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.254" endtime="20221220 18:04:23.257"/>
+</iter>
+<status status="PASS" starttime="20221220 18:04:23.196" endtime="20221220 18:04:23.258"/>
+</for>
+<status status="PASS" starttime="20221220 18:04:23.175" endtime="20221220 18:04:23.258"/>
+</iter>
+<iter>
+<var name="${i}">C:/Users/kamma.naveen/Desktop/IMP/payslips</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221220 18:04:23.263" level="INFO">${counter} = 2</msg>
+<status status="PASS" starttime="20221220 18:04:23.260" endtime="20221220 18:04:23.264"/>
+</kw>
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>${paths}</var>
+<arg>${i}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20221220 18:04:23.266" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\kamma.naveen\Desktop\IMP\payslips"&gt;C:\Users\kamma.naveen\Desktop\IMP\payslips&lt;/a&gt;'.</msg>
+<msg timestamp="20221220 18:04:23.272" level="INFO">14 files:
+FNPPK6587M_2022-23.pdf
+FNPPK6587M_PARTB_2022-23.pdf
+Payslip 1014125 April - 2022.pdf
+Payslip 1014125 August - 2022.pdf
+Payslip 1014125 December - 2021.pdf
+Payslip 1014125 February - 2022.pdf
+Payslip 1014125 January - 2022.pdf
+Payslip 1014125 July - 2022.pdf
+Payslip 1014125 June - 2022.pdf
+Payslip 1014125 March - 2022.pdf
+Payslip 1014125 May - 2022.pdf
+Payslip 1014125 October - 2022.pdf
+Payslip 1014125 September - 2022.pdf
+YASHTE_C001_1014125_Form12BA.pdf</msg>
+<msg timestamp="20221220 18:04:23.274" level="INFO">${paths} = ['FNPPK6587M_2022-23.pdf', 'FNPPK6587M_PARTB_2022-23.pdf', 'Payslip 1014125 April - 2022.pdf', 'Payslip 1014125 August - 2022.pdf', 'Payslip 1014125 December - 2021.pdf', 'Payslip 1014125 February - 2...</msg>
+<status status="PASS" starttime="20221220 18:04:23.265" endtime="20221220 18:04:23.274"/>
+</kw>
+<for flavor="IN">
+<var>${file}</var>
+<value>@{paths}</value>
+<iter>
+<var name="${file}">FNPPK6587M_2022-23.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.277" endtime="20221220 18:04:23.279"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.276" endtime="20221220 18:04:23.280"/>
+</iter>
+<iter>
+<var name="${file}">FNPPK6587M_PARTB_2022-23.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.281" endtime="20221220 18:04:23.282"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.280" endtime="20221220 18:04:23.283"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 April - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.284" endtime="20221220 18:04:23.285"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.283" endtime="20221220 18:04:23.286"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 August - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.286" endtime="20221220 18:04:23.287"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.286" endtime="20221220 18:04:23.287"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 December - 2021.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.288" endtime="20221220 18:04:23.289"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.288" endtime="20221220 18:04:23.290"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 February - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.290" endtime="20221220 18:04:23.291"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.290" endtime="20221220 18:04:23.291"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 January - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.292" endtime="20221220 18:04:23.293"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.292" endtime="20221220 18:04:23.294"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 July - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.296" endtime="20221220 18:04:23.297"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.295" endtime="20221220 18:04:23.297"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 June - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.298" endtime="20221220 18:04:23.299"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.298" endtime="20221220 18:04:23.299"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 March - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.300" endtime="20221220 18:04:23.302"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.299" endtime="20221220 18:04:23.302"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 May - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.304" endtime="20221220 18:04:23.305"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.303" endtime="20221220 18:04:23.305"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 October - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.306" endtime="20221220 18:04:23.306"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.305" endtime="20221220 18:04:23.307"/>
+</iter>
+<iter>
+<var name="${file}">Payslip 1014125 September - 2022.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.308" endtime="20221220 18:04:23.309"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.307" endtime="20221220 18:04:23.310"/>
+</iter>
+<iter>
+<var name="${file}">YASHTE_C001_1014125_Form12BA.pdf</var>
+<kw name="Append To List" library="Collections">
+<arg>${items}</arg>
+<arg>${i}/${file}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221220 18:04:23.312" endtime="20221220 18:04:23.314"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.311" endtime="20221220 18:04:23.314"/>
+</iter>
+<status status="PASS" starttime="20221220 18:04:23.275" endtime="20221220 18:04:23.315"/>
+</for>
+<status status="PASS" starttime="20221220 18:04:23.259" endtime="20221220 18:04:23.316"/>
+</iter>
+<status status="PASS" starttime="20221220 18:04:23.173" endtime="20221220 18:04:23.316"/>
+</for>
+<for flavor="IN">
+<var>${j}</var>
+<value>@{items}</value>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55610891.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.318" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55610891.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.317" endtime="20221220 18:04:23.318"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.319" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55610891.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.318" endtime="20221220 18:04:23.319"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.321" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55610891.pdf</msg>
+<msg timestamp="20221220 18:04:23.326" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.320" endtime="20221220 18:04:23.327"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.317" endtime="20221220 18:04:23.328"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55645439.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.331" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55645439.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.329" endtime="20221220 18:04:23.331"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.334" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55645439.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.333" endtime="20221220 18:04:23.334"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.336" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/ACCOUNTEMPS 55645439.pdf</msg>
+<msg timestamp="20221220 18:04:23.350" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.335" endtime="20221220 18:04:23.351"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.329" endtime="20221220 18:04:23.351"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/ACOUNTEMPS 55678120.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.353" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/ACOUNTEMPS 55678120.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.353" endtime="20221220 18:04:23.354"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.355" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/ACOUNTEMPS 55678120.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.354" endtime="20221220 18:04:23.355"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.356" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/ACOUNTEMPS 55678120.pdf</msg>
+<msg timestamp="20221220 18:04:23.368" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.356" endtime="20221220 18:04:23.368"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.352" endtime="20221220 18:04:23.369"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/ADP 565526311.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.370" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/ADP 565526311.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.369" endtime="20221220 18:04:23.370"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.372" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/ADP 565526311.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.371" endtime="20221220 18:04:23.372"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.373" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/ADP 565526311.pdf</msg>
+<msg timestamp="20221220 18:04:23.386" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.373" endtime="20221220 18:04:23.387"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.369" endtime="20221220 18:04:23.387"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/ADP 569344916.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.389" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/ADP 569344916.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.388" endtime="20221220 18:04:23.389"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.390" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/ADP 569344916.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.389" endtime="20221220 18:04:23.390"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.391" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/ADP 569344916.pdf</msg>
+<msg timestamp="20221220 18:04:23.403" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.390" endtime="20221220 18:04:23.403"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.388" endtime="20221220 18:04:23.404"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/ADP 569345235.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.405" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/ADP 569345235.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.405" endtime="20221220 18:04:23.406"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.408" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/ADP 569345235.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.406" endtime="20221220 18:04:23.409"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.412" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/ADP 569345235.pdf</msg>
+<msg timestamp="20221220 18:04:23.425" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.409" endtime="20221220 18:04:23.425"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.404" endtime="20221220 18:04:23.425"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98249.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.427" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98249.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.426" endtime="20221220 18:04:23.427"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.430" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98249.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.428" endtime="20221220 18:04:23.430"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.432" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98249.pdf</msg>
+<msg timestamp="20221220 18:04:23.447" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.431" endtime="20221220 18:04:23.447"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.426" endtime="20221220 18:04:23.448"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98572.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.450" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98572.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.449" endtime="20221220 18:04:23.451"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.452" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98572.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.451" endtime="20221220 18:04:23.453"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.455" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 98572.pdf</msg>
+<msg timestamp="20221220 18:04:23.468" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.453" endtime="20221220 18:04:23.469"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.448" endtime="20221220 18:04:23.470"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99066.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.473" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99066.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.472" endtime="20221220 18:04:23.473"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.474" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99066.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.473" endtime="20221220 18:04:23.475"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.476" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99066.pdf</msg>
+<msg timestamp="20221220 18:04:23.492" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.475" endtime="20221220 18:04:23.492"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.471" endtime="20221220 18:04:23.494"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99411.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.498" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99411.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.496" endtime="20221220 18:04:23.498"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.500" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99411.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.499" endtime="20221220 18:04:23.500"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.501" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99411.pdf</msg>
+<msg timestamp="20221220 18:04:23.515" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.501" endtime="20221220 18:04:23.517"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.495" endtime="20221220 18:04:23.517"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99412.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.519" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99412.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.518" endtime="20221220 18:04:23.519"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.521" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99412.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.520" endtime="20221220 18:04:23.521"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.523" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99412.pdf</msg>
+<msg timestamp="20221220 18:04:23.538" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.522" endtime="20221220 18:04:23.539"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.517" endtime="20221220 18:04:23.539"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99413.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.544" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99413.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.541" endtime="20221220 18:04:23.545"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.549" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99413.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.546" endtime="20221220 18:04:23.550"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.552" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/A_R Invoice - 99413.pdf</msg>
+<msg timestamp="20221220 18:04:23.567" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.551" endtime="20221220 18:04:23.568"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.540" endtime="20221220 18:04:23.568"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17433.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.570" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17433.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.569" endtime="20221220 18:04:23.570"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.572" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17433.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.571" endtime="20221220 18:04:23.572"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.573" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17433.pdf</msg>
+<msg timestamp="20221220 18:04:23.586" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.572" endtime="20221220 18:04:23.586"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.569" endtime="20221220 18:04:23.587"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17434.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.588" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17434.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.588" endtime="20221220 18:04:23.588"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.590" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17434.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.589" endtime="20221220 18:04:23.590"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.591" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17434.pdf</msg>
+<msg timestamp="20221220 18:04:23.610" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.590" endtime="20221220 18:04:23.612"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.587" endtime="20221220 18:04:23.613"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17499.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.616" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17499.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.614" endtime="20221220 18:04:23.616"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.618" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17499.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.617" endtime="20221220 18:04:23.619"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.620" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17499.pdf</msg>
+<msg timestamp="20221220 18:04:23.637" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.619" endtime="20221220 18:04:23.638"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.613" endtime="20221220 18:04:23.638"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17706.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.641" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17706.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.640" endtime="20221220 18:04:23.642"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.646" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17706.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.643" endtime="20221220 18:04:23.647"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.648" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17706.pdf</msg>
+<msg timestamp="20221220 18:04:23.664" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.647" endtime="20221220 18:04:23.665"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.639" endtime="20221220 18:04:23.665"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17973.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.668" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17973.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.667" endtime="20221220 18:04:23.668"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.670" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17973.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.669" endtime="20221220 18:04:23.670"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.673" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17973.pdf</msg>
+<msg timestamp="20221220 18:04:23.685" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.671" endtime="20221220 18:04:23.686"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.666" endtime="20221220 18:04:23.686"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17990.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.688" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17990.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.687" endtime="20221220 18:04:23.689"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.691" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17990.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.689" endtime="20221220 18:04:23.691"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.694" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C &amp; C 17990.pdf</msg>
+<msg timestamp="20221220 18:04:23.711" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.692" endtime="20221220 18:04:23.712"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.686" endtime="20221220 18:04:23.713"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/C&amp;C 17999.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.716" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/C&amp;C 17999.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.715" endtime="20221220 18:04:23.717"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.718" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/C&amp;C 17999.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.717" endtime="20221220 18:04:23.720"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.722" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/C&amp;C 17999.pdf</msg>
+<msg timestamp="20221220 18:04:23.736" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.721" endtime="20221220 18:04:23.736"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.714" endtime="20221220 18:04:23.737"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25806384.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.739" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25806384.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.738" endtime="20221220 18:04:23.739"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.741" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25806384.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.739" endtime="20221220 18:04:23.741"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.745" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25806384.pdf</msg>
+<msg timestamp="20221220 18:04:23.762" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.742" endtime="20221220 18:04:23.763"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.737" endtime="20221220 18:04:23.763"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25806388.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.767" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25806388.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.766" endtime="20221220 18:04:23.767"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.769" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25806388.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.768" endtime="20221220 18:04:23.770"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.771" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25806388.pdf</msg>
+<msg timestamp="20221220 18:04:23.789" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.770" endtime="20221220 18:04:23.790"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.764" endtime="20221220 18:04:23.791"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25806394.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.795" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25806394.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.792" endtime="20221220 18:04:23.797"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.800" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25806394.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.798" endtime="20221220 18:04:23.800"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.802" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25806394.pdf</msg>
+<msg timestamp="20221220 18:04:23.821" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.801" endtime="20221220 18:04:23.821"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.791" endtime="20221220 18:04:23.822"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25806395.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.824" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25806395.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.823" endtime="20221220 18:04:23.825"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.826" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25806395.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.825" endtime="20221220 18:04:23.827"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.830" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25806395.pdf</msg>
+<msg timestamp="20221220 18:04:23.848" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.828" endtime="20221220 18:04:23.848"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.823" endtime="20221220 18:04:23.849"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25806398.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.851" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25806398.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.850" endtime="20221220 18:04:23.852"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.853" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25806398.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.852" endtime="20221220 18:04:23.854"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.856" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25806398.pdf</msg>
+<msg timestamp="20221220 18:04:23.878" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.854" endtime="20221220 18:04:23.879"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.849" endtime="20221220 18:04:23.879"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25806400.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.881" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25806400.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.880" endtime="20221220 18:04:23.881"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.883" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25806400.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.882" endtime="20221220 18:04:23.883"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.886" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25806400.pdf</msg>
+<msg timestamp="20221220 18:04:23.907" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.884" endtime="20221220 18:04:23.908"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.880" endtime="20221220 18:04:23.910"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/Inv25808453.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.914" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/Inv25808453.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.913" endtime="20221220 18:04:23.914"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.916" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/Inv25808453.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.915" endtime="20221220 18:04:23.917"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.918" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/Inv25808453.pdf</msg>
+<msg timestamp="20221220 18:04:23.932" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.917" endtime="20221220 18:04:23.932"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.912" endtime="20221220 18:04:23.932"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9107921672_invoice_20201211_020910.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.933" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9107921672_invoice_20201211_020910.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.933" endtime="20221220 18:04:23.933"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.934" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9107921672_invoice_20201211_020910.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.934" endtime="20221220 18:04:23.934"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.935" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9107921672_invoice_20201211_020910.pdf</msg>
+<msg timestamp="20221220 18:04:23.948" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.935" endtime="20221220 18:04:23.948"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.932" endtime="20221220 18:04:23.948"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9107921673_invoice_20201211_020910.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.949" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9107921673_invoice_20201211_020910.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.949" endtime="20221220 18:04:23.950"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.950" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9107921673_invoice_20201211_020910.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.950" endtime="20221220 18:04:23.951"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.952" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9107921673_invoice_20201211_020910.pdf</msg>
+<msg timestamp="20221220 18:04:23.964" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.951" endtime="20221220 18:04:23.964"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.948" endtime="20221220 18:04:23.964"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9107951657_invoice_20201212_020815.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.966" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9107951657_invoice_20201212_020815.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.966" endtime="20221220 18:04:23.967"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.967" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9107951657_invoice_20201212_020815.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.967" endtime="20221220 18:04:23.968"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.968" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9107951657_invoice_20201212_020815.pdf</msg>
+<msg timestamp="20221220 18:04:23.985" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.968" endtime="20221220 18:04:23.985"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.966" endtime="20221220 18:04:23.986"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108050802_invoice_20201216_020854.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:23.987" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108050802_invoice_20201216_020854.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:23.986" endtime="20221220 18:04:23.987"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:23.989" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108050802_invoice_20201216_020854.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:23.988" endtime="20221220 18:04:23.989"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:23.990" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108050802_invoice_20201216_020854.pdf</msg>
+<msg timestamp="20221220 18:04:24.004" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:23.989" endtime="20221220 18:04:24.004"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.986" endtime="20221220 18:04:24.005"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108050803_invoice_20201216_020854.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.006" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108050803_invoice_20201216_020854.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.005" endtime="20221220 18:04:24.006"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.007" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108050803_invoice_20201216_020854.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.006" endtime="20221220 18:04:24.007"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.008" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108050803_invoice_20201216_020854.pdf</msg>
+<msg timestamp="20221220 18:04:24.030" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.007" endtime="20221220 18:04:24.031"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.005" endtime="20221220 18:04:24.032"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108087613_invoice_20201217_020741.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.034" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108087613_invoice_20201217_020741.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.033" endtime="20221220 18:04:24.034"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.036" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108087613_invoice_20201217_020741.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.035" endtime="20221220 18:04:24.036"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.037" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108087613_invoice_20201217_020741.pdf</msg>
+<msg timestamp="20221220 18:04:24.054" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.037" endtime="20221220 18:04:24.054"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.032" endtime="20221220 18:04:24.055"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108087614_invoice_20201217_020741.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.057" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108087614_invoice_20201217_020741.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.056" endtime="20221220 18:04:24.057"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.058" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108087614_invoice_20201217_020741.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.057" endtime="20221220 18:04:24.058"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.062" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108087614_invoice_20201217_020741.pdf</msg>
+<msg timestamp="20221220 18:04:24.082" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.059" endtime="20221220 18:04:24.082"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.055" endtime="20221220 18:04:24.082"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108108201_invoice_20201217_020958.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.084" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108108201_invoice_20201217_020958.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.083" endtime="20221220 18:04:24.084"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.085" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108108201_invoice_20201217_020958.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.084" endtime="20221220 18:04:24.085"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.086" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108108201_invoice_20201217_020958.pdf</msg>
+<msg timestamp="20221220 18:04:24.113" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.085" endtime="20221220 18:04:24.114"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.082" endtime="20221220 18:04:24.114"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108134520_invoice_20201218_020727.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.115" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108134520_invoice_20201218_020727.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.114" endtime="20221220 18:04:24.115"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.117" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108134520_invoice_20201218_020727.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.116" endtime="20221220 18:04:24.117"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.118" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108134520_invoice_20201218_020727.pdf</msg>
+<msg timestamp="20221220 18:04:24.133" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.117" endtime="20221220 18:04:24.134"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.114" endtime="20221220 18:04:24.134"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/Samples/so00_9108154227_invoice_20201218_020921.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.136" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/Samples/so00_9108154227_invoice_20201218_020921.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.134" endtime="20221220 18:04:24.136"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.138" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/Samples/so00_9108154227_invoice_20201218_020921.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.136" endtime="20221220 18:04:24.138"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.139" level="INFO">name = C:/Users/kamma.naveen/Desktop/Samples/so00_9108154227_invoice_20201218_020921.pdf</msg>
+<msg timestamp="20221220 18:04:24.152" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.138" endtime="20221220 18:04:24.153"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.134" endtime="20221220 18:04:24.153"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_2022-23.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.155" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_2022-23.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.154" endtime="20221220 18:04:24.155"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.156" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_2022-23.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.155" endtime="20221220 18:04:24.156"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.157" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_2022-23.pdf</msg>
+<msg timestamp="20221220 18:04:24.169" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.156" endtime="20221220 18:04:24.170"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.153" endtime="20221220 18:04:24.170"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_PARTB_2022-23.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.171" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_PARTB_2022-23.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.171" endtime="20221220 18:04:24.171"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.172" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_PARTB_2022-23.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.172" endtime="20221220 18:04:24.172"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.173" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/FNPPK6587M_PARTB_2022-23.pdf</msg>
+<msg timestamp="20221220 18:04:24.185" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.173" endtime="20221220 18:04:24.186"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.170" endtime="20221220 18:04:24.186"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 April - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.187" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 April - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.187" endtime="20221220 18:04:24.188"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.188" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 April - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.188" endtime="20221220 18:04:24.189"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.189" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 April - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.203" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.189" endtime="20221220 18:04:24.204"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.186" endtime="20221220 18:04:24.204"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 August - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.205" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 August - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.204" endtime="20221220 18:04:24.205"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.206" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 August - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.205" endtime="20221220 18:04:24.207"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.208" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 August - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.223" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.207" endtime="20221220 18:04:24.224"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.204" endtime="20221220 18:04:24.224"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 December - 2021.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.225" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 December - 2021.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.225" endtime="20221220 18:04:24.226"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.228" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 December - 2021.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.227" endtime="20221220 18:04:24.228"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.230" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 December - 2021.pdf</msg>
+<msg timestamp="20221220 18:04:24.247" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.229" endtime="20221220 18:04:24.247"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.224" endtime="20221220 18:04:24.248"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 February - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.249" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 February - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.249" endtime="20221220 18:04:24.249"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.250" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 February - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.250" endtime="20221220 18:04:24.250"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.251" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 February - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.270" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.251" endtime="20221220 18:04:24.271"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.248" endtime="20221220 18:04:24.271"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 January - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.273" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 January - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.272" endtime="20221220 18:04:24.273"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.274" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 January - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.273" endtime="20221220 18:04:24.274"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.278" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 January - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.303" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.274" endtime="20221220 18:04:24.303"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.271" endtime="20221220 18:04:24.304"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 July - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.305" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 July - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.305" endtime="20221220 18:04:24.306"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.308" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 July - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.306" endtime="20221220 18:04:24.309"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.312" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 July - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.328" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.310" endtime="20221220 18:04:24.328"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.304" endtime="20221220 18:04:24.329"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 June - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.330" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 June - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.330" endtime="20221220 18:04:24.330"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.331" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 June - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.331" endtime="20221220 18:04:24.331"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.332" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 June - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.346" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.331" endtime="20221220 18:04:24.346"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.329" endtime="20221220 18:04:24.346"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 March - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.348" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 March - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.347" endtime="20221220 18:04:24.348"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.350" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 March - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.349" endtime="20221220 18:04:24.350"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.351" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 March - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.365" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.350" endtime="20221220 18:04:24.366"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.347" endtime="20221220 18:04:24.366"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 May - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.367" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 May - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.367" endtime="20221220 18:04:24.368"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.369" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 May - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.368" endtime="20221220 18:04:24.369"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.370" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 May - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.388" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.370" endtime="20221220 18:04:24.388"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.366" endtime="20221220 18:04:24.389"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 October - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.390" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 October - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.390" endtime="20221220 18:04:24.391"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.392" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 October - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.391" endtime="20221220 18:04:24.393"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.396" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 October - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.422" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.394" endtime="20221220 18:04:24.422"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.389" endtime="20221220 18:04:24.422"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 September - 2022.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.423" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 September - 2022.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.423" endtime="20221220 18:04:24.423"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.424" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 September - 2022.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.424" endtime="20221220 18:04:24.425"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.427" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/Payslip 1014125 September - 2022.pdf</msg>
+<msg timestamp="20221220 18:04:24.447" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.425" endtime="20221220 18:04:24.448"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.422" endtime="20221220 18:04:24.448"/>
+</iter>
+<iter>
+<var name="${j}">C:/Users/kamma.naveen/Desktop/IMP/payslips/YASHTE_C001_1014125_Form12BA.pdf</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Filep}</var>
+<arg>${j}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 18:04:24.449" level="INFO">${Filep} = C:/Users/kamma.naveen/Desktop/IMP/payslips/YASHTE_C001_1014125_Form12BA.pdf</msg>
+<status status="PASS" starttime="20221220 18:04:24.449" endtime="20221220 18:04:24.450"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<arg>name=${Filep}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221220 18:04:24.452" level="INFO">${dict} = {'name': 'C:/Users/kamma.naveen/Desktop/IMP/payslips/YASHTE_C001_1014125_Form12BA.pdf'}</msg>
+<status status="PASS" starttime="20221220 18:04:24.450" endtime="20221220 18:04:24.452"/>
+</kw>
+<kw name="Create Output Work Item" library="RPA.Robocloud.Items">
+<arg>${dict}</arg>
+<arg>save=True</arg>
+<doc>Create a new output work item with optional variables and files.</doc>
+<msg timestamp="20221220 18:04:24.453" level="INFO">name = C:/Users/kamma.naveen/Desktop/IMP/payslips/YASHTE_C001_1014125_Form12BA.pdf</msg>
+<msg timestamp="20221220 18:04:24.470" level="INFO">Saved into output file: C:\Users\kamma.naveen\Documents\RoboCorp\Excel operations\devdata\work-items-out\run-3\work-items.json</msg>
+<status status="PASS" starttime="20221220 18:04:24.452" endtime="20221220 18:04:24.471"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:24.448" endtime="20221220 18:04:24.471"/>
+</iter>
+<status status="PASS" starttime="20221220 18:04:23.316" endtime="20221220 18:04:24.472"/>
+</for>
+<status status="PASS" starttime="20221220 18:04:23.150" endtime="20221220 18:04:24.473"/>
+</kw>
+<status status="PASS" starttime="20221220 18:04:23.145" endtime="20221220 18:04:24.474"/>
+</test>
+<status status="PASS" starttime="20221220 18:04:17.671" endtime="20221220 18:04:24.481"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Producer">Producer</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221220 18:04:20.840" level="WARN">This is a deprecated import that will be removed in favor of RPA.Browser.Selenium</msg>
+<msg timestamp="20221220 18:04:23.073" level="WARN">This is a deprecated import that will be removed in favor of RPA.Robocorp.WorkItems</msg>
+<msg timestamp="20221220 18:04:23.142" level="WARN">No input work items file found: None</msg>
+</errors>
+</robot>
